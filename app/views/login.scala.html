@@ -1,0 +1,45 @@
+@(loginForm: Form[models.users.Login], user: models.users.User)
+@import helper._
+
+
+@main("Login", user) {
+    <div class="form-log-in-with-email">
+
+        <div class="form-white-background">
+
+            <div class="form-title-row">
+                <h1>Log in</h1>
+                @if(loginForm.hasGlobalErrors){
+                    <p class="alert alert-warning">
+                    @loginForm.globalError.message
+                    </p>
+                }
+                @if(flash.containsKey("error")){
+                    <div class="alert alert-warning">
+                    @flash.get("loginRequired")
+                    </div>
+                }
+
+            </div>
+
+            @helper.form(action = controllers.routes.LoginController.loginSubmit()){
+            <div class="form-row">
+                <label>
+                            @inputText(loginForm("email"), '_label -> "E-mail", 'class -> "form-control input-xs")
+                        </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                            @*<input type="password" name="password">*@
+                            @inputPassword(loginForm("password"), '_label -> "Password", 'class -> "form-control input-xs", 'type -> "password")
+                        </label>
+            </div>
+
+            <div class="form-row">
+                <input type ="submit" value="Sign In" class ="btn btn-primary">
+            </div>
+            
+        </div>
+}
+}

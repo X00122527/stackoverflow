@@ -1,0 +1,40 @@
+@(user: models.users.User, meals: List[models.Meal])
+@import helper._
+
+
+@main("Meals", user) {
+
+
+
+
+                                                <!--  tutaj numer meala -->
+    <button type="button" class="btn btn-default btn-lg">
+        <a href="@routes.HomeController.generateDiet()">
+
+            <span class="btn btn-primary" ></span></a></button>
+                <input href="@routes.HomeController.generateDiet()" type="submit" value="Regenerate!" class="btn btn-primary" style="float: right">
+
+                    <!--  <button type="button" class="btn" style="float: right">ADD POST</button>-->
+
+
+
+
+   @for(m <- meals) {
+        <div id="meal">
+
+            <h2> Meal @m.getMealNo()</h2>
+
+            <h3>time of the day: @m.getTimeOfDay</h3>
+            <p>  Total KCAL @m.getTotalKcal()</p>
+
+
+        </div>
+
+   }
+    <script>
+            // JavaScript function returns true if user clicks yes, otherwise, false
+            function confirmRegenerate() {
+                return confirm('Are you sure?');
+            }
+    </script>
+}

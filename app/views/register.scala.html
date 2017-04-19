@@ -1,0 +1,62 @@
+@import helper._
+@(addUserForm: Form[models.users.User], user: models.users.User)
+@main("Register", user){
+    <div class="well">
+    <div class="form-title-row">
+        <h1>Sign Up</h1>
+
+    @if(flash.containsKey("success")) {
+            <div class="alert alert-success">
+            @flash.get("success")
+            </div>
+        }
+        @if(flash.containsKey("fail")) {
+            <div class="alert alert-danger">
+            @flash.get("fail")
+            </div>
+        }
+
+    </div>
+    @form(action = routes.LoginController.addUserSubmit, 'class -> "form-horizontal", 'role->"form") {
+
+        <div class="form-row">
+            <label>
+                @inputText(addUserForm("name"), '_label -> "First Name",'class -> "form-control")
+            </label>
+        </div>
+
+
+         <div class="form-row">
+            <label>
+                @inputText(addUserForm("surname"), '_label -> "Surname",'class -> "form-control")
+            </label>
+        </div>
+
+        <div class="form-row">
+            <label>
+                @inputText(addUserForm("email"), '_label -> "E-mail",'class -> "form-control")
+            </label>
+        </div>
+
+    <div class="form-row">
+        <label>
+            @inputText(addUserForm("password"), '_label -> "Password",'class -> "form-control", 'type -> "password")
+                </label>
+    </div>
+
+
+
+
+
+
+
+        <div class="actions">
+            <input type="submit" value="Save" class="btn btn-primary">
+            <a href="@routes.HomeController.editProfile()"><button class="btn btn-warning">Cancel</button>
+            </a>
+        </div>
+
+    <p style="text-align:center;">Already have an account? <a href="@routes.LoginController.login()"> Sign In Here </a>
+    </div>
+    }
+}

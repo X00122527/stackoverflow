@@ -1,0 +1,332 @@
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+
+.login {
+    float: right;
+    margin-top: 1em;
+    margin-right: 2em;
+
+}
+
+.reg {
+    float: right;
+    margin-right: 2em;
+    margin-top: 1em;
+}
+
+
+
+
+#content {
+    
+}
+
+.form-login {
+    background-color: #F6F7F8;
+    padding-top: 0.063em;
+    padding-bottom: 1.25em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    border-radius: 0.938em;
+    border-color:#d2d2d2;
+    border-width: 0.313em;
+    box-shadow:0 0.063em 0 #cfcfcf;
+    width: 100%;
+    height: 100%;
+    min-width: 450px;
+  min-height: 300px;
+  
+    margin: 0 auto;
+    margin-top: 3em;
+}
+#userName {
+    width: 100%;
+    height: 100%;
+    min-width: 450px;
+  min-height: 300px;
+}
+
+h4 {
+    border:0 solid #fff;
+    border-bottom-width:0.063em;
+    padding-bottom:0.625em;
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 0.625em;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.feature:hover{
+filter: brightness(60%);
+}
+
+.feature{
+  background: url(../images/workout.jpg) no-repeat center center;
+  background-size: cover;
+  height: 600px;
+  text-align: center;
+}
+
+.feature .container {
+  position: relative;
+  top: 200px;
+}
+
+
+.feature h2{
+color:#000;
+font-size:40px;
+text-shadow: 2px 2px #FF0000;
+margin:0;
+padding: 50px 0 0;
+}
+
+.supporting {
+  width: 100%;
+  background-color: #1c1c1c;
+  padding: 50px 0 80px;
+  text-align: center;
+}
+
+.supporting .col {
+  float: left;
+  padding: 10px;
+  width: 33%;
+}
+
+.supporting h2 {
+  color: #ffa800;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.supporting p {
+  color: #efefef;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+
+@media (min-width: 600px) {
+
+  
+}
+
+
+@media (min-width: 800px) {
+
+  
+}
+
+.feature2:hover{
+filter: brightness(60%);
+}
+
+.logo{
+  background: url(../images/logo1.jpg)  no-repeat center center;
+  height: 300px;
+text-align: right;
+
+}
+
+.feature2{
+  background: url(../images/weights.jpg) no-repeat center center;
+  background-size: cover;
+  height: 600px;
+  text-align: center;
+}
+
+.feature2 .container {
+  position: relative;
+  top: 200px;
+}
+
+
+.feature2 h2{
+color:#000;
+font-size:40px;
+text-shadow: 2px 2px #FFFFFF;
+margin:0;
+padding: 50px 0 0;
+}
+
+.loginregister{
+position:absolute; top:0; right:0;
+}
+
+.logo .btn {
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px 30px;
+  text-decoration: none;
+
+
+}
+
+a.btn:hover {
+  background:#ffa800;
+  color:#000;
+
+}
+/** LOGIN **/
+
+  body {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    background-color: #ededed;
+  
+  }
+  .btn 
+  {
+   outline:0;
+   border:none;
+   border-top:none;
+   border-bottom:none;
+   border-left:none;
+   border-right:none;
+   box-shadow:inset 2px -3px rgba(0,0,0,0.15);
+  }
+  .btn:focus
+  {
+   outline:0;
+   -webkit-outline:0;
+   -moz-outline:0;
+  }
+  .fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('http://cleancanvas.herokuapp.com/img/backgrounds/color-splash.jpg');
+    background-repeat:repeat;
+  }
+  .form-signin {
+    max-width: 280px;
+    padding: 15px;
+    margin: 0 auto;
+      margin-top:50px;
+  }
+  .form-signin .form-signin-heading, .form-signin {
+    margin-bottom: 10px;
+  }
+  .form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-color: #000;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: rgb(0,0,0);
+    border-top:1px solid rgba(0,0,0,0.08);
+  }
+  .form-signin-heading {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  }
+
+  .regi {
+    border: 
+  }
+
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+  #meal {
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+
+  display: block;
+  width: 20em;
+  height: 21em;
+}
+
+#meal h2 {
+  padding-left: 1em;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 3.75em;
+}
+
+.sidenav a {
+    padding: 0.5em 0.5em 0.5em 2em;
+    text-decoration: none;
+    font-size: 1.5625em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 1.5625em;
+    font-size: 2.25em;
+    margin-left: 3.125em;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 0.9375em;}
+  .sidenav a {font-size: 1.125em;}
+}
+
+

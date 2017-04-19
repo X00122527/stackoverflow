@@ -1,0 +1,93 @@
+@import helper._
+@(newPostForm: Form[models.Post], addCommentForm: Form[models.Comment], posts: List[models.Post], comments: List[models.Comment], user: models.users.User, post: models.Post, env: play.api.Environment)
+@main("Newsfeed", user) {
+
+
+@*    <div class="well">*@
+
+
+        <div class="row" style="background-color: #ffffff">
+            <div class="col-sm-6 col-centered" style="border: dashed">
+            @form(action = routes.MemberController.addPostSubmit(), 'class -> "form-horizontal", 'role -> "form", 'enctype -> "multipart/form-data") {
+                <label style="font-size: 1.5em">Create a post</label>
+                @inputText(newPostForm("content"), '_label -> " ", 'class -> "form-control", 'placeholder -> "What's on your mind?")
+
+                <label>Image Upload</label>
+
+                <input class="btn-sm btn-default" type="file" name="upload">
+
+
+              @*  <input type="submit" value="Add post" class="btn btn-primary" style="float: right">*@
+
+                    <!--  <button type="button" class="btn" style="float: right">ADD POST</button>-->
+            </div>
+            }
+        </div>
+
+        <br>
+
+
+        @for(p <- posts) {
+            <div class="row well">
+            <div class="col-sm-6 col-centered" style="">
+                <div class="row">
+                    <div>
+                        <p><strong><span style="font-size: 1.5em">@p.getUser.getName @p.getUser.getSurname</span></strong>  <span style="float: right;">@p.getFormatDateTime()</span></p>
+                        <p style="padding-left: 1em;">@p.getContent
+                        </p>
+
+                        @if(env.resource("public/images/postImages/thumbnails/" + p.getId + ".jpg").isDefined) {
+                            <img style="box-shadow: 0.1em;" class="postimg" src="/assets/images/postImages/@(p.getId).jpg"/>
+
+                        } else {
+
+                        }
+                    </div>
+
+                </div>
+
+                    <!-- koniec rowa-->
+                <div class="row">
+                    <div>
+
+                        <button type="button" class="btn btn-default btn-lg" style="float: left;">
+                           <a href="@routes.MemberController.giveLike(p.getId)">
+
+                        <span class="glyphicon glyphicon-thumbs-up" ></span></a></button>
+                            <strong></strong><p id="likes" style="float: left; font-size: 2em;padding-left: 0.1em; font-family: open-sans">@p.getPlike.getLikeCount()</p></strong>
+                        <hr style="border-color: rgba(0, 0, 0, 0.2); clear:both;">
+
+                            @for(c <- comments) {
+                                @if(c.getPost.getId == p.getId) {
+
+                                    <p><strong>@c.getUser.getName @c.getUser.getSurname commented:</strong></p>
+                                    <p> @c.getContent</p>
+                                }
+
+
+
+                        }
+                            @form(action = routes.MemberController.addCommentSubmit(p.getId()), 'class -> "form-horizontal", 'role -> "form") {
+                            @inputText(addCommentForm("content"), '_label -> " ", 'class -> "form-control", 'placeholder -> "Write a comment..")
+
+                       @* <input type="submit" value="Add comment" class="btn btn-primary" style="float: right">*@
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            }
+
+
+       @* </div>*@
+
+
+    <br>
+    <br>
+
+
+
+
+}

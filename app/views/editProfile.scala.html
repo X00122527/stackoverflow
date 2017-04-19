@@ -1,0 +1,77 @@
+@import helper._
+
+@(user: models.users.User, editProfileForm: Form[models.users.Profile])
+@main("Fill in profile", user) {
+
+<!--include hidden field for profile id-->
+<div class="col-sm-4 col-centered">
+        <div class="form-white-background">
+
+
+            @helper.form(action = controllers.routes.LoginController.editProfileForm()){
+
+
+               <div class="well">
+
+                   @inputRadioGroup(
+                       editProfileForm("Gender"),
+                       options = Seq("male" -> "Male", "female" -> "Female")
+                   )
+
+               </div>
+<div class="well"> 
+
+          @inputText(editProfileForm("dob"), 'class -> "form-control", 'type -> "date")
+
+    </div>
+
+
+<div class="well"> 
+
+            @inputText(editProfileForm("Height"), 'class -> "form-control")
+    </div>
+
+  
+ <div class="well"> 
+		<div class="form-group">
+      @inputText(editProfileForm("Weight"), 'class -> "form-control")
+    </div>
+</div>
+<div class="well">
+    @inputRadioGroup(
+        editProfileForm("activityLevel"),
+        options = Seq("1.2"->"Little - no exercise","1.375"->"Light exercise (1 - 3 days per week)\n", "1.55" -> "Moderate exercise (3 - 5 days per week)",
+        "1.725" -> "Heavy Exercise (6 - 7 days per week)", "1.9" -> "Very heavy exercise (twice per day, extra heavy workouts)"),
+        '_label -> "Activity Level",
+        '_error -> editProfileForm("activityLevel").error.map(_.withMessage("Select activity level")))
+
+  
+  </div>
+  
+  <div class="well">
+
+      @inputRadioGroup(
+          editProfileForm("primaryGoal"),
+          options = Seq("loseWeight" -> "Lose weight", "gainMuscle" -> "Gain muscle", "maintain" -> "Maintain weight"),
+          '_label -> "Primary Goal",
+          '_error -> editProfileForm("primaryGoal").error.map(_.withMessage("Select primary goal")))
+
+      
+    </div>
+
+    <div class="well">
+        @inputText(editProfileForm("noOfMeal"), 'class -> "form-control")
+    </div>
+    
+<div class="form-row">
+    <input type="submit" value="Save" class="btn btn-primary">
+    <a href="@routes.LoginController.editProfileForm()"><button class="btn btn-warning">Cancel</button>            </div>
+            
+</div>
+              
+  </div>
+
+
+       
+}}
+
